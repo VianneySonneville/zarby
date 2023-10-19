@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 module Zarby
-  class NoColSepDetected < ZarbyError; end
+  class NoColSepDetected < StandardError; end
 
   class Csv
-    COMMON_DELIMITERS = [',', "\t", ';', ':', '|'].freeze
+    COMMON_DELIMITERS = ['","', '";"', '":"', '"|"'].freeze
 
     def initialize(content:)
       @content = content

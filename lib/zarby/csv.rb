@@ -5,6 +5,7 @@ module Zarby
 
   class Csv
     COMMON_DELIMITERS = [',', "\t", ';', ':', '|'].freeze
+
     def initialize(content:)
       @content = content
     end
@@ -36,7 +37,10 @@ module Zarby
     end
 
     def count
-      ->(hash, delimiter) { hash[delimiter] = @content.count(delimiter); hash }
+      lambda { |hash, delimiter|
+        hash[delimiter] = @content.count(delimiter)
+        hash
+      }
     end
   end
 end

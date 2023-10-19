@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Zarby
   class NoColSepDetected < ZarbyError; end
 
@@ -32,7 +34,7 @@ module Zarby
     def most_found
       ->(a, b) { b[1] <=> a[1] }
     end
-  
+
     def count
       ->(hash, delimiter) { hash[delimiter] = @content.count(delimiter); hash }
     end

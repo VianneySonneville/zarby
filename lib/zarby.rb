@@ -3,6 +3,5 @@
 require_relative "zarby/version"
 
 module Zarby
-  class Error < StandardError; end
-  # Your code goes here...
+  class ZarbyError < StandardError; end
 end

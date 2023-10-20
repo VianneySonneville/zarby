@@ -13,6 +13,11 @@ describe Zarby do
       end
     end
 
+    context 'return "" if input is nil' do
+      subject { Zarby::Normalize.new(input: nil) }
+      it { is_expected.to convert_to_utf8('') }
+    end
+
     context 'convert UTF-8 string' do
       subject { Zarby::Normalize.new(input: 'AaüAaß') }
       it { is_expected.to convert_to_utf8('AaüAaß') }

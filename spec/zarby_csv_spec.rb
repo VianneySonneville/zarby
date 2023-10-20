@@ -5,6 +5,13 @@ require "csv"
 
 describe Zarby do
   describe "Csv" do
+    context "raise error if content is nil" do
+      it do
+        expect(Zarby::Csv.detect_separator(nil))
+        rescue Zarby::NoColSepDetected => e
+        expect(e).to be_a(Zarby::NoColSepDetected)
+      end
+    end
     context "Can find delimiter demicolon in csv file" do
       subject { Zarby::Csv.detect_separator(File.read("#{__dir__}/semicolon.csv")) }
       it { is_expected.to eq ";" }

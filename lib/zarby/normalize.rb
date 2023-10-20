@@ -6,7 +6,7 @@ module Zarby
     COMMON_ENCODINGS = %w[UTF-8 Windows-1252 ASCII-8BIT US-ASCII].freeze
 
     def initialize(input:)
-      @input = input
+      @input = input || ""
     end
 
     def self.utf8(input)

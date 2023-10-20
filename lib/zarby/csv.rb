@@ -7,7 +7,7 @@ module Zarby
     COMMON_DELIMITERS = ['","', '";"', '":"', '"|"'].freeze
 
     def initialize(content:)
-      @content = content
+      @content = content || ""
     end
 
     def self.detect_separator(content)

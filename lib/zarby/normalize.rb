@@ -1,48 +1,35 @@
 # frozen_string_literal: true
 
 module Zarby
+  # this class is used to normalize the input string to UTF-8
   class Normalize
     # utf-8 converting from the string's given encoding
-    COMMON_ENCODINGS = %w[UTF-8 Windows-1252 ASCII-8BIT US-ASCII].freeze
+    COMMON_ENCODINGS = %w[UTF-8 Windows-1252 ASCII-8BIT ISO-8859-1 US-ASCII].freeze
 
+    # @param input [String]
+    # @return [String]
     def initialize(input:)
-      @input = input || ""
+      @input = input || ''
     end
 
+    # @param input [String]
+    # @return [String]
     def self.utf8(input)
       new(input: input).utf8
     end
 
+    # @return [String]
     def utf8
       output = @input if valid?
-      COMMON_ENCODINGS.each do |encoding|
-        output ||= convert { @input.encode(encoding) }
-        output ||= convert { @input.force_encoding('UTF-8') } if encoding == 'UTF-8'
-      end
 
-      output ||= unpack_pack { @input.unpack("C*").pack("U*") } if output.nil?
-
-      # replace any unknown characters with a placeholder: �
-      output ||= convert { @input.encode('UTF-8', invalid: :replace, undef: :replace) }
-      output
+      output ||= @input.force_encoding(Encoding::ISO_8859_1).encode!(Encoding::UTF_8)
+    rescue Encoding::UndefinedConversionError, Encoding::InvalidByteSequenceError
+      nil
     end
 
     private
 
-    def convert
-      string = yield
-      string if string.valid_encoding?
-    rescue Encoding::UndefinedConversionError, Encoding::InvalidByteSequenceError
-      nil
-    end
-
-    def unpack_pack
-      string = yield
-      string if string.valid_encoding?
-    rescue Encoding::UndefinedConversionError, Encoding::InvalidByteSequenceError
-      nil
-    end
-
+    # @return [Boolean]
     def valid?
       @input.encoding.name == 'UTF-8' && @input.valid_encoding?
     end

@@ -1,4 +1,11 @@
-# 0.1.3 / 2023-10-24
+# 0.1.5 / 2023-10-24
+
+## Enhancements
+
+* Refactoring method utf8 to Zarby::Csv class
+* Add documentation to Zarby::Csv module and Zarby::Normalize module
+
+# 0.1.4 / 2023-10-24
 
 * Remove missing debug log
 

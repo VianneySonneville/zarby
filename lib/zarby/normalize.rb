@@ -1,18 +1,24 @@
 # frozen_string_literal: true
 
 module Zarby
+  # this class is used to normalize the input string to UTF-8
   class Normalize
     # utf-8 converting from the string's given encoding
     COMMON_ENCODINGS = %w[UTF-8 Windows-1252 ASCII-8BIT ISO-8859-1 US-ASCII].freeze
 
+    # @param input [String]
+    # @return [String]
     def initialize(input:)
       @input = input || ''
     end
 
+    # @param input [String]
+    # @return [String]
     def self.utf8(input)
       new(input: input).utf8
     end
 
+    # @return [String]
     def utf8
       output = @input if valid?
 
@@ -23,6 +29,7 @@ module Zarby
 
     private
 
+    # @return [Boolean]
     def valid?
       @input.encoding.name == 'UTF-8' && @input.valid_encoding?
     end

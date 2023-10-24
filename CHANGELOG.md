@@ -1,3 +1,13 @@
+# 0.1.3 / 2023-10-24
+
+* Remove missing debug log
+
+# 0.1.3 / 2023-10-24
+
+## Enhancements
+
+* Decode ASCII-8BIT (actually windows)
+
 # 0.1.2 / 2023-10-20
 
 ## Enhancements

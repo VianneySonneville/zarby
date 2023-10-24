@@ -13,14 +13,12 @@ module Zarby
       new(input: input).utf8
     end
 
-    def self.magic_utf8(input)
-      new(input: input).magic_utf8
-    end
-
     def utf8
       output = @input if valid?
 
       output ||= @input.force_encoding(Encoding::ISO_8859_1).encode!(Encoding::UTF_8)
+    rescue Encoding::UndefinedConversionError, Encoding::InvalidByteSequenceError
+      nil
     end
 
     private

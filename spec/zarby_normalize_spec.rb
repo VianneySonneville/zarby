@@ -37,6 +37,8 @@ describe Zarby do
     context 'convert with invalid characters' do
       # subject { Zarby::Normalize.new(input: "Aa\x80Aa\x81".force_encoding('ASCII-8BIT')) } # never valid
       # it { is_expected.to convert_to_utf8('Aa�Aa�') }
+      #   # irb> ["A", "a", "\u0080", "A", "a", "\u0081"].reject! { |e| e=~ /\u0080/}
+      # => ["A", "a", "A", "a", "\u0081"] 
     end
   end
 end

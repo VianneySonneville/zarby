@@ -9,7 +9,7 @@ module Zarby
     # @param input [String]
     # @return [String]
     def initialize(input:)
-      @input = input || ''
+      @input = input&.force_encoding(Encoding::UTF_8) || ''
     end
 
     # @param input [String]
@@ -21,6 +21,7 @@ module Zarby
     # @return [String]
     def utf8
       output = @input if valid?
+
 
       output ||= @input.force_encoding(Encoding::ISO_8859_1).encode!(Encoding::UTF_8)
     rescue Encoding::UndefinedConversionError, Encoding::InvalidByteSequenceError

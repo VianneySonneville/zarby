@@ -33,6 +33,11 @@ describe Zarby do
       it { is_expected.to convert_to_utf8('AaüAaß') }
     end
 
+    context 'convert with incorrect encoding' do
+      subject { Zarby::Normalize.new(input: "Dur\xC3\xA9e".force_encoding('ASCII-8BIT')) } # actually Windows-1252
+      it { is_expected.to convert_to_utf8('Durée') }
+    end
+
     context 'convert invalid char' do
       subject { Zarby::Normalize.new(input: "Aa\x80Aa\x81".force_encoding('ASCII-8BIT')) }
       it { is_expected.to convert_to_utf8("Aa\u0080Aa\u0081") }

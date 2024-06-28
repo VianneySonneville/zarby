@@ -1,0 +1,7 @@
+## TEST ##
+
+$~ rspec
+
+si j ai un message d'ereure asdf , d'installer la version de ruby alors qu'elle est bonne
+c est que je n ai pas la gem rspec de cette version de ruby
+:::: gem install rspec

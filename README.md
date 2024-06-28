@@ -22,7 +22,7 @@ Three module are available: CSV, Normelize And Anonymize
 
 Method do detecte delimiter in csv!
 
-Since V 0.1.6 (depreciated and removed on 10/2024)
+Since V 0.1.6 (depreciated and removed on 10/2024) :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning:
 
 ```ruby
 Zarby::CSV.detect_delimiter("aa,bb,cc") # => ","
@@ -46,10 +46,10 @@ Zarby.detect_delimiter("aa;bb;cc,dd") # => ";"
 
 Method to utf8 encode all caracters in a string (since widows , sweden enoding, etc ...).
 
-Since V 0.1.6 (depreciated and removed on 10/2024)
+Since V 0.1.6 (depreciated and removed on 10/2024) :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning:
 
 ```ruby
-Zarby.utf8("Aa\xFCAa\xDF".force_encoding('Windows-1252')) # => "AaüAaß
+Zarby::Normalize.utf8("Aa\xFCAa\xDF".force_encoding('Windows-1252')) # => "AaüAaß
 # actually Windows-1252
 Zarby::Normalize.utf8("Aa\xFCAa\xDF".force_encoding('ASCII-8BIT')) # => "AaüAaß"
 # actually Windows-1252

@@ -3,7 +3,7 @@
 module Zarby
   # this class is used to anonymise string on replace char with *
   class Anonymize
-    def initialize(input, nb_chars: 2, mask_with: '*')
+    def initialize(input: , nb_chars: 2, mask_with: '*')
       @input = input
       @nb_chars = nb_chars
       @mask_with = mask_with

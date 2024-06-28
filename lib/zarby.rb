@@ -6,21 +6,18 @@ require_relative 'zarby/normalize'
 require_relative 'zarby/anonymize'
 
 module Zarby
-  class ZarbyError < StandardError; end
+  def anonymise(input, nb_chars: 2, mask_with: '*')
+    Anonymize.new(input:, nb_chars: nb_chars, mask_with: mask_with).call
+  end
+
+  def detect_separator(content)
+    Csv.new(content:).detect_separator
+  end
 
   def utf8(input)
-    Normalize.utf8(input)
-  end
-  module_function :utf8
-
-  def detect_separator(_content)
-    Csv.detect_separator(input)
-  end
-  module_function :detect_separator
-
-  def anonymise(input, nb_chars: 2, mask_with: '*')
-    Zarby::Anonymize.new(input, nb_chars: nb_chars, mask_with: mask_with).call
+    Normalize.new(input:).utf8
   end
 
-  module_function :anonymise
+  module_function :anonymise, :detect_separator, :utf8 
+  private_constant :Anonymize
 end

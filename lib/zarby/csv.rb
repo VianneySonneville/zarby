@@ -3,6 +3,8 @@
 module Zarby
   class NoColSepDetected < StandardError; end
 
+  extend Gem::Deprecate
+
   # this class is used to detect the column separator in a CSV file
   class Csv
     COMMON_DELIMITERS = ['","', '";"', '":"', '"|"'].freeze
@@ -13,16 +15,25 @@ module Zarby
       @content = content || ""
     end
 
-    # @param [String] content
     # @return [String]
-    def self.detect_separator(content)
-      new(content: content).detect_separator
+    def call
+      valid? ? delimiters[0][0][1] : raise(Zarby::NoColSepDetected)
     end
 
     # @return [String]
     def detect_separator
       valid? ? delimiters[0][0][1] : raise(Zarby::NoColSepDetected)
     end
+    deprecate :detect_separator, 'Zarby#detect_separator(.string)', 2024, 10
+
+    class << self
+      # @param [String] content
+      # @return [String]
+      def detect_separator(content)
+        new(content: content).detect_separator
+      end
+    end
+
 
     private
 

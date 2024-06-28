@@ -19,7 +19,7 @@ Or install it yourself as:
 :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: \
 
 
-V 0.1.6 (methods used wase depreciated and removed on 10/2024) for version (V 0.2.0) \
+V 0.1.6 (methods used wase depreciated and removed on 10/2024) for version (V 0.2.0)
 
 
 :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: \
@@ -41,7 +41,7 @@ Zarby::CSV.detect_delimiter("aa;bb;cc") # => ";"
 Zarby::CSV.detect_delimiter("aa,bb;cc,dd") # => ","
 Zarby::CSV.detect_delimiter("aa;bb;cc,dd") # => ";"
 ```
-Since V 0.1.7 
+Since V 0.1.7 :great:
 
 ```ruby
 Zarby.detect_delimiter("aa,bb,cc") # => ","
@@ -57,7 +57,7 @@ Zarby.detect_delimiter("aa;bb;cc,dd") # => ";"
 
 Method to utf8 encode all caracters in a string (since widows , sweden enoding, etc ...).
 
-Since V 0.1.6 (depreciated and removed on 10/2024) 
+Since V 0.1.6 (depreciated and removed on 10/2024) :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning:
 
 ```ruby
 Zarby::Normalize.utf8("Aa\xFCAa\xDF".force_encoding('Windows-1252')) # => "AaüAaß
@@ -70,7 +70,7 @@ Zarby::Normalize.utf8("Aa\x80Aa\x81".force_encoding('ASCII-8BIT')) # => "AaüAa�
 
 ```
 
-Since V 0.1.7
+Since V 0.1.7 :great:
 
 ```ruby
 Zarby.utf8("Aa\xFCAa\xDF".force_encoding('Windows-1252')) # => "AaüAaß

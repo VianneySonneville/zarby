@@ -8,11 +8,11 @@ A library to Manipulate String with utiles methods.
 
 Run:
 
-    bundle add monetize
+    bundle add zarby
 
 Or install it yourself as:
 
-    $ gem install monetize
+    $ gem install zarby
 
 ## Usage
 

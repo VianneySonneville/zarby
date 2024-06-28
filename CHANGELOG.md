@@ -1,3 +1,12 @@
+# 0.1.6 / 2024-06-28
+
+## Enhancements
+
+* Poro class Csv and Normalize to symplify syntax
+* Csv and Normalize class will be private and their method depreciated
+* Use only instance of Zarby
+* Add module to anonymise string value.
+
 # 0.1.5 / 2023-10-24
 
 ## Enhancements

@@ -39,7 +39,7 @@ Zarby::CSV.detect_delimiter("aa;bb;cc") # => ";"
 Zarby::CSV.detect_delimiter("aa,bb;cc,dd") # => ","
 Zarby::CSV.detect_delimiter("aa;bb;cc,dd") # => ";"
 ```
-Since V 0.1.7 :great: :great:
+Since V 0.1.7 :heart_eyes: :heart_eyes: :heart_eyes: :heart_eyes:
 
 ```ruby
 Zarby.detect_delimiter("aa,bb,cc") # => ","
@@ -68,7 +68,7 @@ Zarby::Normalize.utf8("Aa\x80Aa\x81".force_encoding('ASCII-8BIT')) # => "AaüAa�
 
 ```
 
-Since V 0.1.7 :great:
+Since V 0.1.7 :heart_eyes: :heart_eyes: :heart_eyes: :heart_eyes:
 
 ```ruby
 Zarby.utf8("Aa\xFCAa\xDF".force_encoding('Windows-1252')) # => "AaüAaß

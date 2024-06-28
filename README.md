@@ -5,6 +5,7 @@
 A library to Manipulate String with utiles methods.
 
 ## Installation
+foo
 
 Run:
 

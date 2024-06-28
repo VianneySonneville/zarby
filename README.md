@@ -16,7 +16,6 @@ Or install it yourself as:
 
 ## Usage
 
-
 Three module are available: CSV, Normelize And Anonymize
 
 ### CSV
@@ -107,3 +106,7 @@ Zarby.anonymise("Ectoplasma@Ectoplasma") # => "Ec******ma@Ec******ma"
 Zarby.anonymise("pichu@pikachu@raichu") # => "pi*hu@pi***hu@ra**hu"
 Zarby.anonymise("@fantominus@spectrum@ectoplasma@") # => "**@fa******us@sp****um@ec******ma"
 ```
+
+## Contributing
+
+Bug report and pull request are welcome on GitHub at https://github.com/zarby-ruby/zarby.

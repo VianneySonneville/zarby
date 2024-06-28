@@ -29,7 +29,7 @@ Three module are available: CSV, Normelize And Anonymize
 
 ### CSV
 
-Method do detecte delimiter in csv!
+Method to detecte delimiter in csv!
 
 Since V 0.1.6 (depreciated and removed on 10/2024) :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning:
 

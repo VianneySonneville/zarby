@@ -11,11 +11,11 @@ module Zarby
   end
 
   def detect_separator(content)
-    Csv.new(content:).detect_separator
+    Csv.new(content:).call
   end
 
   def utf8(input)
-    Normalize.new(input:).utf8
+    Normalize.new(input:).call
   end
 
   module_function :anonymise, :detect_separator, :utf8 

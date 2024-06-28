@@ -12,3 +12,5 @@ pkg/*
 spec/dummy/tmp/*
 spec/dummy/log/*.log
 .rspec
+.tool-versions
+gem_info.txt

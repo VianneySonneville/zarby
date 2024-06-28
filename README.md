@@ -15,15 +15,13 @@ Or install it yourself as:
     $ gem install zarby
 
 ## WARNING
-:warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: \
-:warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: \
+:warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning:
 
 
 V 0.1.6 (methods used wase depreciated and removed on 10/2024) for version (V 0.2.0)
 
 
-:warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: \
-:warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: 
+:warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: 
 
 ## Usage
 
@@ -41,7 +39,7 @@ Zarby::CSV.detect_delimiter("aa;bb;cc") # => ";"
 Zarby::CSV.detect_delimiter("aa,bb;cc,dd") # => ","
 Zarby::CSV.detect_delimiter("aa;bb;cc,dd") # => ";"
 ```
-Since V 0.1.7 :great:
+Since V 0.1.7 :great: :great:
 
 ```ruby
 Zarby.detect_delimiter("aa,bb,cc") # => ","

@@ -15,13 +15,13 @@ Or install it yourself as:
     $ gem install zarby
 
 ## WARNING
-:warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning:
+:warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning:
 
 
 V 0.1.6 (methods used wase depreciated and removed on 10/2024) for version (V 0.2.0)
 
 
-:warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning:
+:warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning:
 
 ## Usage
 
@@ -29,29 +29,37 @@ Three module are available: CSV, Normelize And Anonymize
 
 ### CSV
 
+```ruby
+detect_separator(content|string)
+```
+
 Method to detecte delimiter in csv!
 
 Since V 0.1.6 (depreciated and removed on 10/2024) :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning:
 
 ```ruby
-Zarby::CSV.detect_delimiter("aa,bb,cc") # => ","
-Zarby::CSV.detect_delimiter("aa;bb;cc") # => ";"
-Zarby::CSV.detect_delimiter("aa,bb;cc,dd") # => ","
-Zarby::CSV.detect_delimiter("aa;bb;cc,dd") # => ";"
+Zarby::CSV.detect_separator("aa,bb,cc") # => ","
+Zarby::CSV.detect_separator("aa;bb;cc") # => ";"
+Zarby::CSV.detect_separator("aa,bb;cc,dd") # => ","
+Zarby::CSV.detect_separator("aa;bb;cc,dd") # => ";"
 ```
 Since V 0.1.7 :heart_eyes: :heart_eyes: :heart_eyes: :heart_eyes:
 
 ```ruby
-Zarby.detect_delimiter("aa,bb,cc") # => ","
-Zarby.detect_delimiter("aa;bb;cc") # => ";"
-Zarby.detect_delimiter("aa,bb;cc,dd") # => ","
-Zarby.detect_delimiter("aa;bb;cc,dd") # => ";"
+Zarby.detect_separator("aa,bb,cc") # => ","
+Zarby.detect_separator("aa;bb;cc") # => ";"
+Zarby.detect_separator("aa,bb;cc,dd") # => ","
+Zarby.detect_separator("aa;bb;cc,dd") # => ";"
 ```
 
-`detect_delimiter`, render the dilimiter, define in a csv on XXXX ms.
+`detect_separator`, render the separator, define in a csv on XXXX ms.
 `[',', ';', ':', '|']`, is available by default.
 
 ### Normelize
+
+```ruby
+utf8(input|string)
+```
 
 Method to utf8 encode all caracters in a string (since widows , sweden enoding, etc ...).
 
@@ -83,6 +91,10 @@ Zarby.utf8("Aa\x80Aa\x81".force_encoding('ASCII-8BIT')) # => "AaüAaß"
 
 ### Anonymise
 
+```ruby
+anonymise(input|string, nb_chars|int \ 2, mask_with|string \ '*')
+```
+
 Method to anonymise a string.
 
 ```ruby
@@ -91,8 +103,8 @@ Zarby.anonymise("za") # => "**"
 Zarby.anonymise("zar") # => "z*r"
 Zarby.anonymise("zarb") # => "z**b"
 Zarby.anonymise("zarby") # => "za*by"
-arby.anonymise("mewtwo") # => "me**wo"
-arby.anonymise("Ectoplasma") # => "Ec******ma"
+Zarby.anonymise("mewtwo") # => "me**wo"
+Zarby.anonymise("Ectoplasma") # => "Ec******ma"
 ```
 
 `anonymise` try to set '\*' between two first and two last letter of the string if lenght greater than 4.

@@ -111,7 +111,9 @@ Zarby.anonymise("zarb@zarb") # => "z**b@z**b"
 Zarby.anonymise("zarby@zarby") # => "za*by@za*by"
 Zarby.anonymise("mewtwo@mewtwo") # => "me**wo@me**wo"
 Zarby.anonymise("Ectoplasma@Ectoplasma") # => "Ec******ma@Ec******ma"
-# Using multiple "@"
+
+## Using multiple "@"
+
 Zarby.anonymise("pichu@pikachu@raichu") # => "pi*hu@pi***hu@ra**hu"
 Zarby.anonymise("@fantominus@spectrum@ectoplasma@") # => "**@fa******us@sp****um@ec******ma"
 ```

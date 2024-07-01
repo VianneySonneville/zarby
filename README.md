@@ -15,13 +15,13 @@ Or install it yourself as:
     $ gem install zarby
 
 ## WARNING
-:warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning:
+:warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning:
 
 
 V 0.1.6 (methods used wase depreciated and removed on 10/2024) for version (V 0.2.0)
 
 
-:warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: 
+:warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning: :warning:
 
 ## Usage
 
@@ -48,7 +48,7 @@ Zarby.detect_delimiter("aa,bb;cc,dd") # => ","
 Zarby.detect_delimiter("aa;bb;cc,dd") # => ";"
 ```
 
-`detect_delimiter`, render the dilimter, define in a csv on XXXX ms.
+`detect_delimiter`, render the dilimiter, define in a csv on XXXX ms.
 `[',', ';', ':', '|']`, is available by default.
 
 ### Normelize
@@ -95,7 +95,7 @@ arby.anonymise("mewtwo") # => "me**wo"
 arby.anonymise("Ectoplasma") # => "Ec******ma"
 ```
 
-`anonymise` try to set '*' between two first and two last letter of the string if lenght greater than 4.
+`anonymise` try to set '\*' between two first and two last letter of the string if lenght greater than 4.
 if string length between 1 to 2, return **.
 if string length = 3 return a*a.
 if string length = 4 return a**a.

@@ -38,10 +38,10 @@ Method to detecte delimiter in csv!
 Since V 0.1.6 (depreciated and removed on 10/2024) :warning: :warning: :warning: :warning: :warning: :warning::warning: :warning: :warning:
 
 ```ruby
-Zarby::CSV.detect_separator("aa,bb,cc") # => ","
-Zarby::CSV.detect_separator("aa;bb;cc") # => ";"
-Zarby::CSV.detect_separator("aa,bb;cc,dd") # => ","
-Zarby::CSV.detect_separator("aa;bb;cc,dd") # => ";"
+Zarby::Csv.detect_separator("aa,bb,cc") # => ","
+Zarby::Csv.detect_separator("aa;bb;cc") # => ";"
+Zarby::Csv.detect_separator("aa,bb;cc,dd") # => ","
+Zarby::Csv.detect_separator("aa;bb;cc,dd") # => ";"
 ```
 Since V 0.1.7 :heart_eyes: :heart_eyes: :heart_eyes: :heart_eyes:
 
@@ -55,7 +55,7 @@ Zarby.detect_separator("aa;bb;cc,dd") # => ";"
 `detect_separator`, render the separator, define in a csv on XXXX ms.
 `[',', ';', ':', '|']`, is available by default.
 
-### Normelize
+### Normalize
 
 ```ruby
 utf8(input|string)

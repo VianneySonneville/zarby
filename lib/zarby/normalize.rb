@@ -11,6 +11,7 @@ module Zarby
     # @param input [String]
     # @return [String]
     def initialize(input:)
+      raise Zarby::ArgumentZarby, "input to normalise utf8 must be of type String, #{input.class} given" unless input.is_a?(String)
       @input = input&.force_encoding(Encoding::UTF_8) || ''
     end
 
@@ -21,7 +22,7 @@ module Zarby
 
       output ||= @input.force_encoding(Encoding::ISO_8859_1).encode!(Encoding::UTF_8)
     rescue Encoding::UndefinedConversionError, Encoding::InvalidByteSequenceError
-      nil
+      raise
     end
 
     # @return [String]

@@ -11,11 +11,6 @@ describe Zarby do
       end
     end
 
-    context 'return "" if input is nil' do
-      subject { Zarby.utf8(nil) }
-      it { is_expected.to convert_to_utf8('') }
-    end
-
     context 'convert UTF-8 string' do
       subject { Zarby.utf8('AaüAaß') }
       it { is_expected.to convert_to_utf8('AaüAaß') }
@@ -39,6 +34,14 @@ describe Zarby do
     context 'convert invalid char' do
       subject { Zarby.utf8("Aa\x80Aa\x81".force_encoding('ASCII-8BIT')) }
       it { is_expected.to convert_to_utf8("Aa\u0080Aa\u0081") }
+    end
+
+    context "must return exception if content not be a String" do
+      it do
+        expect(Zarby.utf8(nil))
+        rescue Zarby::ArgumentZarby => e
+        expect(e).to be_a(Zarby::ArgumentZarby)
+      end
     end
   end
 end

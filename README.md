@@ -89,45 +89,45 @@ Zarby.utf8("Aa\x80Aa\x81".force_encoding('ASCII-8BIT')) # => "AaüAaß"
 
 ```
 
-### Anonymise
+### Anonymize
 
 ```ruby
-anonymise(input|string, nb_chars|int \ 2, mask_with|string \ '*')
+anonymize(input|string, nb_chars|int \ 2, mask_with|string \ '*')
 ```
 
-Method to anonymise a string.
+Method to anonymize a string.
 
 ```ruby
-Zarby.anonymise("z") # => "**"
-Zarby.anonymise("za") # => "**"
-Zarby.anonymise("zar") # => "z*r"
-Zarby.anonymise("zarb") # => "z**b"
-Zarby.anonymise("zarby") # => "za*by"
-Zarby.anonymise("mewtwo") # => "me**wo"
-Zarby.anonymise("Ectoplasma") # => "Ec******ma"
+Zarby.anonymize("z") # => "**"
+Zarby.anonymize("za") # => "**"
+Zarby.anonymize("zar") # => "z*r"
+Zarby.anonymize("zarb") # => "z**b"
+Zarby.anonymize("zarby") # => "za*by"
+Zarby.anonymize("mewtwo") # => "me**wo"
+Zarby.anonymize("Ectoplasma") # => "Ec******ma"
 ```
 
-`anonymise` try to set '\*' between two first and two last letter of the string if lenght greater than 4.
+`anonymize` try to set '\*' between two first and two last letter of the string if lenght greater than 4.
 if string length between 1 to 2, return **.
 if string length = 3 return a*a.
 if string length = 4 return a**a.
 
-if "@" is present, render `anonymise` string before and after "@", and kept "@" symbole.
+if "@" is present, render `anonymize` string before and after "@", and kept "@" symbole.
 exemple:
 
 ```ruby
-Zarby.anonymise("z@z") # => "**@**"
-Zarby.anonymise("za@za") # => "**@**"
-Zarby.anonymise("zar@zar") # => "z*r@z*r"
-Zarby.anonymise("zarb@zarb") # => "z**b@z**b"
-Zarby.anonymise("zarby@zarby") # => "za*by@za*by"
-Zarby.anonymise("mewtwo@mewtwo") # => "me**wo@me**wo"
-Zarby.anonymise("Ectoplasma@Ectoplasma") # => "Ec******ma@Ec******ma"
+Zarby.anonymize("z@z") # => "**@**"
+Zarby.anonymize("za@za") # => "**@**"
+Zarby.anonymize("zar@zar") # => "z*r@z*r"
+Zarby.anonymize("zarb@zarb") # => "z**b@z**b"
+Zarby.anonymize("zarby@zarby") # => "za*by@za*by"
+Zarby.anonymize("mewtwo@mewtwo") # => "me**wo@me**wo"
+Zarby.anonymize("Ectoplasma@Ectoplasma") # => "Ec******ma@Ec******ma"
 
 ## Using multiple "@"
 
-Zarby.anonymise("pichu@pikachu@raichu") # => "pi*hu@pi***hu@ra**hu"
-Zarby.anonymise("@fantominus@spectrum@ectoplasma@") # => "**@fa******us@sp****um@ec******ma"
+Zarby.anonymize("pichu@pikachu@raichu") # => "pi*hu@pi***hu@ra**hu"
+Zarby.anonymize("@fantominus@spectrum@ectoplasma@") # => "**@fa******us@sp****um@ec******ma"
 ```
 
 ## Contributing

@@ -7,8 +7,8 @@ describe Zarby do
     context "raise error if content is nil" do
       it do
         expect(Zarby.detect_separator(nil))
-        rescue Zarby::NoColSepDetected => e
-        expect(e).to be_a(Zarby::NoColSepDetected)
+        rescue Zarby::ColSeparatorZarby => e
+        expect(e).to be_a(Zarby::ColSeparatorZarby)
       end
     end
     context "Can find delimiter demicolon in csv file" do
@@ -31,8 +31,8 @@ describe Zarby do
     context "must return exception if delimiter not found in COMMON_DELIMITERS" do
       it do
         expect(Zarby.detect_separator(File.read("#{__dir__}/error.csv")))
-        rescue Zarby::NoColSepDetected => e
-        expect(e).to be_a(Zarby::NoColSepDetected)
+        rescue Zarby::ColSeparatorZarby => e
+        expect(e).to be_a(Zarby::ColSeparatorZarby)
       end
     end
   end

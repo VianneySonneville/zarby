@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "String encoding and decoding with Ruby."
   # spec.description = "TODO: Write a longer description or delete this line."
-  spec.homepage = "https://guides.rubygems.org"
+  spec.homepage = "https://rubygems.org/gems/zarby"
   spec.required_ruby_version = ">= 2.6.0"
   spec.licenses = ['MIT']
 
